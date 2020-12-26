@@ -26,4 +26,5 @@ start the server
 ```bash
 yarn start
 ```
-now visit http://localhost:3000 to see the the game in action
+now visit http://localhost:3000 to see the the game in action <br />
+vist the app [here](https://web-tictactoe.netlify.app/)
