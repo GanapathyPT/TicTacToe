@@ -64,7 +64,7 @@ export default function Game({ dark, setDark }) {
 						winner === TIE ? "It's a tie" : `${winner} wins` 
 					}
 					</div>
-					<small className="center">click here to continue</small>
+					<small onClick={() => window.location.reload()} className="center">click here to continue</small>
 				</Fragment>
 			}
 			<div onClick={setDark} className="dark__switch">
