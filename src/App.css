@@ -8,12 +8,20 @@
   background-color: #000;
 }
 
+body {
+  background-color: #000;
+}
+
 .center__all {
   width: 100vw;
   height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.game {
+  z-index: 999;
 }
 
 .square {
@@ -82,5 +90,94 @@
   .square {
     height: 60px;
     width: 60px;
+  }
+}
+/* ---------------------------------------------------------- */
+/* ---------------------dark mode styles--------------------- */
+/* ---------------------------------------------------------- */
+
+.dark__switch {
+  position: fixed;
+  top: 5px;
+  right: 5px;
+  width: 25px;
+  height: 25px;
+  padding: 0;
+  margin: 0;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.dark__mode {
+  width: 1px;
+  height: 1px;
+  position: fixed;
+  top: 50vh;
+  left: 50vw;
+  z-index: 2;
+  border-radius: 50%;
+  animation: ripple-back 1500ms forwards;
+}
+
+body .dark{
+  background-color: #fff;
+}
+
+.dark .dark__mode {
+  animation: ripple 1500ms forwards;
+}
+
+.dark *::selection {
+  background-color: #fff;
+  color: #000;
+}
+
+.dark .game {
+  color: #ccc;
+}
+
+.dark .line {
+  color: #ccc;
+}
+
+.dark .alert {
+  background-color: rgba(255, 255, 255, .5);
+  color: #eee;
+}
+
+.dark .square {
+  background-color: #333;
+  color: #ccc;
+}
+
+.dark .square:hover {
+  background-color: #444;
+}
+
+@keyframes ripple {
+  from {
+    transform: scale(0);
+    background-color: #fff;
+    color: black;
+  }
+
+  to {
+    transform: scale(2000);
+    background-color: #000;
+    color: white;
+  }
+}
+
+@keyframes ripple-back {
+  from {
+    transform: scale(0);
+    background-color: #000;
+    color: black;
+  }
+
+  to {
+    transform: scale(2000);
+    background-color: #fff;
+    color: white;
   }
 }
