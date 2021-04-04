@@ -1,5 +1,6 @@
 # Tic Tac Toe
  XOXO
+ this is a time killing game dont play
 
 ## Requirements
 make sure node is installed
