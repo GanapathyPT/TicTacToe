@@ -1,0 +1,11 @@
+.winnerText {
+  font-size: 3em;
+  text-align: center;
+  margin-bottom: 1.5em;
+  letter-spacing: 0.07em;
+}
+
+.boardContainer {
+  display: flex;
+  flex-direction: column;
+}
