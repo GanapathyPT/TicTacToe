@@ -171,11 +171,11 @@ export function useTicTacToe() {
   }, [board]);
 
   const onCellClick = (rowIndex: number, colIndex: number) => {
-    if (turn === Turn.AI) return;
     if (winner !== undefined) {
       resetGame();
       return;
     }
+    if (turn === Turn.AI || board[rowIndex][colIndex] !== "") return;
     setBoard((oldBoard) =>
       oldBoard.map((row, i) =>
         i === rowIndex
