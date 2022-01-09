@@ -171,7 +171,11 @@ export function useTicTacToe() {
   }, [board]);
 
   const onCellClick = (rowIndex: number, colIndex: number) => {
-    if (turn === Turn.AI || winner !== undefined) return;
+    if (turn === Turn.AI) return;
+    if (winner !== undefined) {
+      resetGame();
+      return;
+    }
     setBoard((oldBoard) =>
       oldBoard.map((row, i) =>
         i === rowIndex
@@ -180,6 +184,12 @@ export function useTicTacToe() {
       )
     );
     setTurn((oldTurn) => (oldTurn === Turn.USER ? Turn.AI : Turn.USER));
+  };
+
+  const resetGame = () => {
+    setTurn(Turn.USER);
+    setWinner(undefined);
+    setBoard(() => newBoard());
   };
 
   return {
